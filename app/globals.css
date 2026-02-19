@@ -1,0 +1,26 @@
+/*
+ * Global CSS for the Equilibrium application.
+ * This file is imported in `layout.tsx` and is applied to all pages. You can
+ * include any global styles, resets or font definitions here. Keeping this
+ * file simple avoids adding unnecessary dependencies like Tailwind in the
+ * absence of a proper PostCSS configuration.
+ */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #111827; /* matches the dark background used in the app */
+  color: #f9fafb; /* light text on dark background */
+}
+
+a {
+  color: #6366f1;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
