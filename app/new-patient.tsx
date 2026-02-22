@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useRouter } from 'next/router';
-import React, { useState, useEffect } from 'react';
+'use client';
+
+import { useEffect, useState, type ChangeEvent, type FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import { computeMetabolicPlan } from '../src/core/metabolic/metabolic';
 import type { MetabolicInput } from '../src/core/metabolic/types';
@@ -19,7 +19,7 @@ export default function NewPatientPage() {
     bfPercent: '',
     massaMagraKg: '',
   });
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
   // Obtém sessão
@@ -36,7 +36,7 @@ export default function NewPatientPage() {
     }
   }, [router]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const session = getSession();
     if (!session) {
